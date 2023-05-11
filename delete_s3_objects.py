@@ -40,7 +40,7 @@ class DeleteObjects:
 
         log_dir = os.path.dirname(self.log_file)
         if not os.path.exists(log_dir):
-            os.mkdir(log_dir, mode=755)
+            os.mkdir(log_dir, mode=0o755)
 
         file_handler = logging.FileHandler(self.log_file)
         file_handler.setLevel(logging.INFO)

@@ -33,7 +33,7 @@ class DeleteS3Objects:
             if "Deleted" in response:
                 logger.info(
                     "Deleted objects '%s' from bucket '%s'.",
-                    [del_obj["Key"] for del_obj in response["Deleted"]],
+                    sorted([del_obj["Key"] for del_obj in response["Deleted"]]),
                     self.client.name,
                 )
             if "Errors" in response:
